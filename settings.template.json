@@ -1,0 +1,70 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8787"
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"console.log(JSON.stringify({hookSpecificOutput:{hookEventName:'SessionStart',additionalContext:'Claude Toolkit 플로우 활성화: OmniRoute → Headroom → Claude Mem → Code Setup → Task Observer → Graphify → Ponytail'}}))\"",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "headroom init hook ensure --profile init-user --marker headroom-init-claude",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "headroom init hook ensure --profile init-user --marker headroom-init-claude",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "이 세션에서 관찰된 거 있어? task-observer를 통해 기록할 만한 개선점, 패턴, 학습을 확인해."
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "ponytail@ponytail": true,
+    "caveman@caveman": true,
+    "document-skills@anthropic-agent-skills": true,
+    "example-skills@anthropic-agent-skills": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "claude-mem@thedotmack": true,
+    "headroom@headroom-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": { "source": { "source": "github", "repo": "DietrichGebert/ponytail" } },
+    "caveman": { "source": { "source": "github", "repo": "JuliusBrussee/caveman" } },
+    "anthropic-agent-skills": { "source": { "source": "github", "repo": "anthropics/skills" } },
+    "claude-plugins-official": { "source": { "source": "github", "repo": "anthropics/claude-plugins-official" } },
+    "thedotmack": { "source": { "source": "github", "repo": "thedotmack/claude-mem" } },
+    "headroom-marketplace": { "source": { "source": "github", "repo": "chopratejas/headroom" } }
+  }
+}
