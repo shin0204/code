@@ -45,7 +45,7 @@ Write-Host ""
 # 6. Graphify 확인
 Write-Host "6️⃣  Graphify (지식 그래프)" -ForegroundColor Cyan
 if (Test-Path "$env:USERPROFILE\.claude\skills\graphify") {
-    Write-Host "   ✅ 스킬 설치됨 (v0.9.30)" -ForegroundColor Green
+    Write-Host "   ✅ 스킬 설치됨 (v0.9.44)" -ForegroundColor Green
 } else {
     Write-Host "   ⚠️  스킬 미발견" -ForegroundColor Yellow
 }

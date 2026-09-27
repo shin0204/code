@@ -7,7 +7,7 @@ $ClaudeDir = "$env:USERPROFILE\.claude"
 Write-Host "== 1. CLI / npm 도구 ==" -ForegroundColor Cyan
 npm install -g omniroute            # OmniRoute 3.8.49 - 모델 라우팅
 pipx install headroom               # Headroom 0.37.0 - 토큰 압축 (또는 pip install headroom)
-npm install -g graphify-cli          # Graphify CLI 0.9.30 - 지식 그래프
+npm install -g graphify-cli          # Graphify CLI 0.9.44 - 지식 그래프
 
 Write-Host "== 2. 마켓플레이스 등록 ==" -ForegroundColor Cyan
 claude plugin marketplace add anthropics/claude-plugins-official

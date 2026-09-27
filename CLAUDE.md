@@ -64,16 +64,16 @@ Claude Toolkit (7 key tools integrated flow) will be automatically active for ev
 3. **Claude Mem**: 세션 요약 및 인사이트 저장
 4. **다음 세션**: 추천 구성 자동 생성
 
-## ✅ 설치 상태 (2026-09-21 검증)
-- [x] OmniRoute 3.8.49 (npm 전역, Anthropic 연결됨)
+## ✅ 설치 상태 (2026-09-27 검증)
+- [x] OmniRoute 3.8.49 (npm 전역, DB 초기화 완료 · 서버 정지 상태 · 프로바이더 미등록)
 - [x] Headroom 0.37.0 (CLI + 플러그인, 프록시 127.0.0.1:8787)
-- [x] Claude Mem 13.15.0 (플러그인, MCP 연결됨)
+- [x] Claude Mem 13.25.2 (플러그인, MCP 연결됨)
 - [x] Code Setup 1.0.0 (플러그인)
 - [x] Task Observer (스킬 ~/.claude/skills/task-observer)
-- [x] Graphify CLI 0.9.30 (스킬 ~/.claude/skills/graphify)
+- [x] Graphify CLI 0.9.44 (스킬 ~/.claude/skills/graphify)
 - [x] Ponytail 4.8.4 (플러그인, Lazy Mode full)
-- [x] settings.json 생성 및 구성
-- [x] 자동화 훅 적용
+- [x] settings.json 구성 (유효 키: model / theme / permissions / enabledPlugins / extraKnownMarketplaces)
+- [x] 훅: 플러그인 제공 (ponytail · caveman SessionStart) + 프로젝트 settings.local.json 의 Headroom wrap selfheal
 
 ## 🚀 빠른 시작
 
