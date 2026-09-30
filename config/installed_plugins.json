@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "plugins": {
+    "ponytail@ponytail": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\ponytail\\ponytail\\4.8.4",
+        "version": "4.8.4",
+        "installedAt": "2026-07-30T10:23:08.392Z",
+        "lastUpdated": "2026-07-30T10:23:08.392Z",
+        "gitCommitSha": "16f29800fd2681bdf24f3eb4ccffe38be3baec6b"
+      }
+    ],
+    "document-skills@anthropic-agent-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\anthropic-agent-skills\\document-skills\\33375500bcea",
+        "version": "33375500bcea",
+        "installedAt": "2026-08-05T00:36:55.811Z",
+        "lastUpdated": "2026-09-27T23:13:36.196Z",
+        "gitCommitSha": "33375500bcea98d610eb30ce10ac4e59b89c390d"
+      }
+    ],
+    "example-skills@anthropic-agent-skills": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\anthropic-agent-skills\\example-skills\\33375500bcea",
+        "version": "33375500bcea",
+        "installedAt": "2026-08-05T00:37:01.298Z",
+        "lastUpdated": "2026-09-27T23:13:36.129Z",
+        "gitCommitSha": "33375500bcea98d610eb30ce10ac4e59b89c390d"
+      }
+    ],
+    "superpowers@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\6.4.1",
+        "version": "6.4.1",
+        "installedAt": "2026-08-13T05:50:13.078Z",
+        "lastUpdated": "2026-09-22T21:32:37.660Z",
+        "gitCommitSha": "5bf4e78011075bcfc0dc295f0724994cd123ee71"
+      }
+    ],
+    "claude-code-setup@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\claude-plugins-official\\claude-code-setup\\1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-08-13T23:32:50.196Z",
+        "lastUpdated": "2026-08-13T23:32:50.196Z"
+      }
+    ],
+    "claude-mem@thedotmack": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\thedotmack\\claude-mem\\13.15.0",
+        "version": "13.15.0",
+        "installedAt": "2026-08-13T23:33:34.067Z",
+        "lastUpdated": "2026-08-13T23:33:34.067Z",
+        "gitCommitSha": "d768ba364302d12b76e69e4f021f0bb1d2d50ed6"
+      }
+    ],
+    "superpowers@superpowers-marketplace": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\superpowers-marketplace\\superpowers\\6.3.0",
+        "version": "6.3.0",
+        "installedAt": "2026-08-18T22:24:00.934Z",
+        "lastUpdated": "2026-08-18T22:24:00.934Z",
+        "gitCommitSha": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797"
+      }
+    ],
+    "headroom@headroom-marketplace": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\headroom-marketplace\\headroom\\0.37.0",
+        "version": "0.37.0",
+        "installedAt": "2026-09-08T05:41:56.635Z",
+        "lastUpdated": "2026-09-08T05:41:56.635Z",
+        "gitCommitSha": "e67b3c8a29443a60d6b0018fb22f525c5cd7e709"
+      }
+    ],
+    "caveman@caveman": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\User\\.claude\\plugins\\cache\\caveman\\caveman\\2.7.0",
+        "version": "2.7.0",
+        "installedAt": "2026-09-21T07:35:35.238Z",
+        "lastUpdated": "2026-09-21T07:35:35.238Z",
+        "gitCommitSha": "ae26f3a4775574bd49dc8bdb61c0287bbc3cd268"
+      }
+    ]
+  }
+}

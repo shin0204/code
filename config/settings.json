@@ -1,0 +1,133 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8787",
+    "ENABLE_TOOL_SEARCH": "true"
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "sonnet[1m]",
+  "skillOverrides": {
+    "pony-head": "off"
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{let p='';try{p=JSON.parse(d).prompt||''}catch(e){}if(p.trim().toLowerCase()==='wrap up'){console.log(JSON.stringify({hookSpecificOutput:{hookEventName:'UserPromptSubmit',additionalContext:'WRAP-UP TRIGGERED. Do this now: 1) Summarize this conversation so far - what was done, key conclusions and decisions, and remaining TODOs. Keep it concise. 2) List the notebooklm notebooks (list_notebooks) and ask the user which notebook to save this summary into - do not assume Claude Memory or any other notebook. 3) Once the user picks one, save the summary using the notebooklm MCP add_source tool (type: text) into that notebook, with the source title prefixed by the current date in YYYY-MM-DD format. 4) Tell the user whether the save succeeded or failed.'}}))}})\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"console.log(JSON.stringify({hookSpecificOutput:{hookEventName:'SessionStart',additionalContext:'Claude Toolkit 플로우 활성화: OmniRoute(모델선택) → Headroom(토큰절감) → Claude Mem(메모리) → Code Setup(환경) → Task Observer(패턴) → Graphify(그래프) → Ponytail(효율)'}}))\"",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/Users/User/.local/bin/headroom.EXE init hook ensure --profile init-user --marker headroom-init-claude",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "이 세션에서 관찰된 거 있어? task-observer를 통해 기록할 만한 개선점, 패턴, 또는 학습이 있었는지 확인하고 있어."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:/Users/User/.local/bin/headroom.EXE init hook ensure --profile init-user --marker headroom-init-claude",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "ponytail@ponytail": true,
+    "document-skills@anthropic-agent-skills": true,
+    "example-skills@anthropic-agent-skills": true,
+    "superpowers@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "claude-mem@thedotmack": true,
+    "superpowers@superpowers-marketplace": true,
+    "headroom@headroom-marketplace": true,
+    "caveman@caveman": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "superpowers-dev": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    },
+    "headroom-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "chopratejas/headroom"
+      }
+    }
+  },
+  "theme": "auto",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
+}
